@@ -71,11 +71,11 @@ def generate_meal_html(meals, school_name):
         }
 
         .header-main-title {
-            font-size: 5.8rem;
+            font-size: 2.8rem;
             font-weight: 900; 
             color: #FFFFFF;
-            letter-spacing: -2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            letter-spacing: -1px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
             margin: 0;
         }
 
@@ -87,48 +87,48 @@ def generate_meal_html(meals, school_name):
 
         .page-header .weather, 
         .page-header .date-time {
-            font-size: 2.2rem;
+            font-size: 1.3rem;
             color: #FFFFFF;
             display: flex;
             align-items: center;
-            gap: 12px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            gap: 8px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
         }
 
         .page-header .date-time {
-            line-height: 1.3;
+            line-height: 1.2;
             text-align: right;
-            font-size: 1.8rem;
+            font-size: 1.1rem;
         }
 
         .page-header .weather {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 8px;
         }
 
         .page-header .weather-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 5px;
+            gap: 2px;
         }
 
         .page-header .weather-icon {
-            width: 45px;
-            height: 45px;
+            width: 24px;
+            height: 24px;
             flex-shrink: 0;
         }
 
         .page-header .weather-temp {
-            font-size: 2.2rem;
+            font-size: 1.3rem;
         }
 
         .page-header .school-name {
-            font-size: 2.2rem;
+            font-size: 1.3rem;
             color: #FFFFFF;
             font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
             white-space: nowrap;
         }
 
@@ -170,14 +170,14 @@ def generate_meal_html(meals, school_name):
         .meal-container {
             display: flex; 
             flex-wrap: nowrap;
-            gap: 15px;
-            margin: 40px auto;
-            padding: 40px;
-            width: 95%;
-            max-width: 2000px;
+            gap: 8px;
+            margin: 20px auto;
+            padding: 16px;
+            width: 98%;
+            max-width: 1200px;
             background: #FFFFFF;
-            border-radius: 20px;
-            box-shadow: 0 8px 40px rgba(74, 27, 140, 0.18);
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(74, 27, 140, 0.10);
             overflow-x: auto;
         }
 
@@ -186,14 +186,14 @@ def generate_meal_html(meals, school_name):
             flex-direction: column;
             gap: 0;
             flex: 1;
-            min-width: 280px;
+            min-width: 120px;
         }
 
         .meal-date {
             background: #E7E5F5;
-            border-radius: 15px 15px 0 0;
-            padding: 20px;
-            font-size: 2.2rem;
+            border-radius: 10px 10px 0 0;
+            padding: 8px;
+            font-size: 1.2rem;
             font-weight: 900;
             color: #222;
             text-align: center;
@@ -202,17 +202,17 @@ def generate_meal_html(meals, school_name):
 
         .meal-card {
             background: white;
-            border-radius: 0 0 15px 15px;
-            padding: 25px;
+            border-radius: 0 0 10px 10px;
+            padding: 10px;
             flex: 1;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
             border: 1px solid #E5E5E5;
             border-top: none;
         }
 
         .meal-menu {
-            font-size: 2rem;
-            line-height: 1.6;
+            font-size: 1.1rem;
+            line-height: 1.4;
             color: #333;
             white-space: pre-line;
             font-weight: 500;
@@ -221,17 +221,17 @@ def generate_meal_html(meals, school_name):
 
         .meal-menu span {
             display: block;
-            margin-bottom: 12px;
-            text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 6px;
+            text-shadow: 0 0 1px rgba(0, 0, 0, 0.08);
         }
 
         .allergen {
-            font-size: 1.6rem;
+            font-size: 0.95rem;
             color: #666;
-            margin-top: 15px;
+            margin-top: 8px;
             font-weight: 500;
             border-top: 1px solid #eee;
-            padding-top: 15px;
+            padding-top: 8px;
         }
 
         /* 반응형 디자인 수정 */
@@ -277,10 +277,10 @@ def generate_meal_html(meals, school_name):
 
         .notice-text {
             text-align: center;
-            color: white;
-            font-size: 1.4rem;
-            margin: 20px 0;
-            line-height: 1.6;
+            color: #666;
+            font-size: 0.95rem;
+            margin: 10px 0;
+            line-height: 1.4;
         }
     """
 

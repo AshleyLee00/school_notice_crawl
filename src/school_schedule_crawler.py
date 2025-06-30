@@ -105,7 +105,7 @@ def generate_schedule_html(schedules, school_name, year, month):
             gap: 18px;
         }
         .header-main-title {
-            font-size: 4.2rem;
+            font-size: 2.8rem;
             font-weight: 900; 
             color: #FFFFFF;
             letter-spacing: -1px;
@@ -119,22 +119,22 @@ def generate_schedule_html(schedules, school_name, year, month):
         }
         .page-header .weather, 
         .page-header .date-time {
-            font-size: 2.1rem;
+            font-size: 1.3rem;
             color: #FFFFFF;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
         }
         .page-header .date-time {
             line-height: 1.2;
             text-align: right;
-            font-size: 1.7rem;
+            font-size: 1.1rem;
         }
         .page-header .weather {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 8px;
         }
         .page-header .weather-content {
             display: flex;
@@ -143,15 +143,15 @@ def generate_schedule_html(schedules, school_name, year, month):
             gap: 2px;
         }
         .page-header .weather-icon {
-            width: 38px;
-            height: 38px;
+            width: 24px;
+            height: 24px;
             flex-shrink: 0;
         }
         .page-header .weather-temp {
-            font-size: 2.1rem;
+            font-size: 1.3rem;
         }
         .page-header .school-name {
-            font-size: 2.1rem;
+            font-size: 1.3rem;
             color: #FFFFFF;
             font-weight: 700;
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
@@ -168,30 +168,30 @@ def generate_schedule_html(schedules, school_name, year, month):
         }
         .calendar-section { margin-bottom: 18px; }
         .calendar-section h2 {
-            font-size: 2.2rem;
+            font-size: 1.3rem;
             color: #6C4EB6;
             margin-bottom: 10px;
         }
         .schedule-calendar {
             width: 100%;
             border-collapse: collapse;
-            font-size: 2.1rem;
+            font-size: 1.2rem;
             margin-bottom: 18px;
             table-layout: fixed;
         }
         .schedule-calendar th, .schedule-calendar td {
             text-align: center;
-            padding: 8px 0;
+            padding: 4px 0;
             border: none;
             width: calc(100% / 31);
         }
         .calendar-num {
             display: inline-block;
-            width: 2.8rem;
-            height: 2.8rem;
-            line-height: 2.8rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            line-height: 1.5rem;
             border-radius: 50%;
-            font-size: 2.0rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: #222;
             background: transparent;
@@ -211,22 +211,22 @@ def generate_schedule_html(schedules, school_name, year, month):
         .event-list-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 2.0rem;
+            font-size: 1.1rem;
         }
         .event-list-table td {
             border-bottom: 1px solid #eee;
-            padding: 12px 8px;
+            padding: 6px 4px;
             text-align: left;
         }
         .event-list-table td:first-child {
             color: #6C4EB6;
             font-weight: 700;
-            width: 140px;
-            font-size: 2.0rem;
+            width: 80px;
+            font-size: 1.1rem;
         }
         .event-list-table td:last-child {
             color: #222;
-            font-size: 2.0rem;
+            font-size: 1.1rem;
         }
         @media (max-width: 900px) {
             .main-content { padding: 6px; }
