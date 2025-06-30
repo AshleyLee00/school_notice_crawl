@@ -8,9 +8,9 @@ import os
 
 # 학교 및 API 정보
 API_KEY = "dafe93db7c0d4c6eb8ba9a8f5aaee96b"  # 실제 서비스 시 본인 키로 교체
-ATPT_OFCDC_SC_CODE = "E10"  # 인천광역시교육청
-SD_SCHUL_CODE = "7310624"   # 인천반도체고등학교
-SCHOOL_NAME = "인천반도체고등학교"
+ATPT_OFCDC_SC_CODE = "J10"  # 경기도교육청
+SD_SCHUL_CODE = "7569032"   # 안양초등학교
+SCHOOL_NAME = "안양초등학교"
 
 # 학사일정 가져오기 함수
 def get_schedule_info(api_key, atpt_code, school_code, year, month):
@@ -94,104 +94,104 @@ def generate_schedule_html(schedules, school_name, year, month):
             justify-content: space-between;
             align-items: center;
             background: linear-gradient(90deg, #9B7EDC, #6C4EB6);
-            padding: 18px 40px;
-            box-shadow: 0 4px 16px rgba(74, 27, 140, 0.10);
+            padding: 30px 90px;
+            box-shadow: 0 8px 32px rgba(74, 27, 140, 0.18);
             flex-shrink: 0;
             min-height: 80px;
         }
         .header-left {
             display: flex;
             align-items: center;
-            gap: 18px;
+            gap: 30px;
         }
         .header-main-title {
-            font-size: 2.8rem;
+            font-size: 5.8rem;
             font-weight: 900; 
             color: #FFFFFF;
-            letter-spacing: -1px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+            letter-spacing: -2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             margin: 0;
         }
         .header-right {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 60px;
         }
         .page-header .weather, 
         .page-header .date-time {
-            font-size: 1.3rem;
+            font-size: 2.2rem;
             color: #FFFFFF;
             display: flex;
             align-items: center;
-            gap: 8px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+            gap: 12px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
         .page-header .date-time {
-            line-height: 1.2;
+            line-height: 1.3;
             text-align: right;
-            font-size: 1.1rem;
+            font-size: 1.8rem;
         }
         .page-header .weather {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 15px;
         }
         .page-header .weather-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 2px;
+            gap: 5px;
         }
         .page-header .weather-icon {
-            width: 24px;
-            height: 24px;
+            width: 45px;
+            height: 45px;
             flex-shrink: 0;
         }
         .page-header .weather-temp {
-            font-size: 1.3rem;
+            font-size: 2.2rem;
         }
         .page-header .school-name {
-            font-size: 1.3rem;
+            font-size: 2.2rem;
             color: #FFFFFF;
             font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
             white-space: nowrap;
         }
         .main-content {
             background: #fff;
-            border-radius: 18px;
-            box-shadow: 0 4px 20px rgba(74, 27, 140, 0.10);
-            margin: 28px auto;
-            padding: 32px 32px 32px 32px;
-            max-width: 1400px;
-            width: 98vw;
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(74, 27, 140, 0.18);
+            margin: 40px auto;
+            padding: 40px 60px;
+            max-width: 2000px;
+            width: 95%;
         }
-        .calendar-section { margin-bottom: 18px; }
+        .calendar-section { margin-bottom: 30px; }
         .calendar-section h2 {
-            font-size: 1.3rem;
+            font-size: 2.5rem;
             color: #6C4EB6;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         .schedule-calendar {
             width: 100%;
             border-collapse: collapse;
-            font-size: 1.2rem;
-            margin-bottom: 18px;
+            font-size: 2.2rem;
+            margin-bottom: 30px;
             table-layout: fixed;
         }
         .schedule-calendar th, .schedule-calendar td {
             text-align: center;
-            padding: 4px 0;
+            padding: 8px 0;
             border: none;
             width: calc(100% / 31);
         }
         .calendar-num {
             display: inline-block;
-            width: 1.5rem;
-            height: 1.5rem;
-            line-height: 1.5rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
             border-radius: 50%;
-            font-size: 1.1rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: #222;
             background: transparent;
@@ -207,35 +207,76 @@ def generate_schedule_html(schedules, school_name, year, month):
         .schedule-calendar td.sunday {
             color: #e23a3a !important;
         }
-        .event-list-section { margin-top: 8px; }
+        .event-list-section { margin-top: 20px; }
         .event-list-table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 1.1rem;
+            font-size: 2.2rem;
         }
         .event-list-table td {
             border-bottom: 1px solid #eee;
-            padding: 6px 4px;
+            padding: 12px 8px;
             text-align: left;
         }
         .event-list-table td:first-child {
             color: #6C4EB6;
             font-weight: 700;
-            width: 80px;
-            font-size: 1.1rem;
+            width: 120px;
+            font-size: 2rem;
         }
         .event-list-table td:last-child {
             color: #222;
-            font-size: 1.1rem;
+            font-size: 2.2rem;
+        }
+        @media (max-width: 1380px) {
+            .page-header {
+                flex-direction: column;
+                padding: 25px;
+                gap: 20px;
+            }
+            .header-left, .header-right {
+                width: 100%;
+                justify-content: center;
+                gap: 40px;
+            }
+            .header-main-title {
+                font-size: 5rem;
+            }
+            .page-header .school-name {
+                font-size: 2.2rem;
+            }
+            .main-content { padding: 30px 40px; }
         }
         @media (max-width: 900px) {
-            .main-content { padding: 6px; }
-            .header-main-title { font-size: 1.7rem; }
+            .main-content { padding: 20px; }
+            .header-main-title { font-size: 4rem; }
+            .calendar-section h2 { font-size: 2rem; }
+            .schedule-calendar { font-size: 1.8rem; }
+            .calendar-num {
+                width: 2rem;
+                height: 2rem;
+                line-height: 2rem;
+                font-size: 1.5rem;
+            }
+            .event-list-table { font-size: 1.8rem; }
+            .event-list-table td:first-child { font-size: 1.6rem; }
+            .event-list-table td:last-child { font-size: 1.8rem; }
         }
         @media (max-width: 600px) {
-            .main-content { padding: 2px; }
-            .header-main-title { font-size: 1.2rem; }
-            .page-header { padding: 8px 2vw; }
+            .main-content { padding: 15px; }
+            .header-main-title { font-size: 3rem; }
+            .page-header { padding: 15px; }
+            .calendar-section h2 { font-size: 1.8rem; }
+            .schedule-calendar { font-size: 1.5rem; }
+            .calendar-num {
+                width: 1.8rem;
+                height: 1.8rem;
+                line-height: 1.8rem;
+                font-size: 1.3rem;
+            }
+            .event-list-table { font-size: 1.5rem; }
+            .event-list-table td:first-child { font-size: 1.4rem; }
+            .event-list-table td:last-child { font-size: 1.5rem; }
         }
     '''
     js_code = '''
@@ -260,8 +301,8 @@ def generate_schedule_html(schedules, school_name, year, month):
         updateDateTime();
         function fetchWeather() {
             const apiKey = '91fff999310c2bdea1978b3f0925fb38';
-            const lat = 37.473294;
-            const lon = 126.621205;
+            const lat = 37.401;
+            const lon = 126.922;
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
             fetch(url)
                 .then(res => res.json())

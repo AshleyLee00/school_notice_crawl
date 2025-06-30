@@ -3,7 +3,7 @@
     <html lang="ko">
     <head>
         <meta charset="UTF-8">
-        <title>인천반도체고등학교 가정통신문</title>
+        <title>안양초등학교 가정통신문</title>
         <style>
         @font-face {
             font-family: 'SeoulAlrim';
@@ -241,16 +241,16 @@
             <div class="header-right">
                 <div class="weather">날씨 정보를 불러오는 중...</div>
                 <div class="date-time" id="date-time"></div>
-                <div class="school-name">인천반도체고등학교</div>
+                <div class="school-name">안양초등학교</div>
             </div>
         </header>
         <div class="main-content">
             <div class="content-box">
                 <table class="content-list">
-                    <tr><td>[인천교육소식] 2025년 하반기 인천난정평화교육원 평화체험교육 신청 안내새글</td><td>2025-06-30</td></tr><tr><td>[인천교육소식] 2025 읽걷쓰 학부모 글바시 아카데미 안내</td><td>2025-06-27</td></tr><tr><td>[인천교육소식] 2025년 인천학교안전공제회 「학교안전 ON 공모전」 안내</td><td>2025-06-26</td></tr><tr><td>2025학년도1학기  IT소프트웨어과 2학년 시스템 프로그래밍 평가계획 정정 안내</td><td>2025-06-25</td></tr><tr><td>[인천교육소식] 인천광역시교육청 신청사 공간구성에 대한 시민 설문조사 안내</td><td>2025-06-24</td></tr><tr><td>IT통신과 3학년 인공지능 기초 성취기준 표기 오류 수정 알림</td><td>2025-06-24</td></tr><tr><td>2025학년도1학기  2학년 프로그래밍 평가계획 정정 안내</td><td>2025-06-24</td></tr>
+                    <tr><td>7월 건강식단표 및 영양정보 안내</td><td>2025-06-30</td></tr><tr><td>2025 학부모용 학교폭력 예방교육 소식지 2호 배포</td><td>2025-06-30</td></tr><tr><td>2025년 안양시 여성청소년 생리용품 보편 지원</td><td>2025-06-27</td></tr><tr><td>2025 안양초 학생생활규정 확정 안내</td><td>2025-06-17</td></tr><tr><td>급식 교육공무직원 쟁의행위 참여 통보 후 파업철회로 인한 학교급식  대체식 제공 안내(6월13일 금)</td><td>2025-06-12</td></tr><tr><td>25년 학부모회 3차 연수 안내( 양육자 성교육 )</td><td>2025-06-12</td></tr><tr><td>급식 교육공무직원 쟁의행위(파업)참여에 따른 학교급식 대체식 제공 안내(6월13일(금))</td><td>2025-06-11</td></tr>
                 </table>
             </div>
-            <img class="school-img" src="images/인천반도체고-학교.png" alt="학교 전경">
+            <img class="school-img" src="images/안양초등학교.png" alt="학교 전경">
         </div>
         <script>
         function updateDateTime() {
@@ -298,8 +298,8 @@
 
         function fetchWeather() {
             const apiKey = '91fff999310c2bdea1978b3f0925fb38';
-            const lat = 37.473294;
-            const lon = 126.621205;
+            const lat = 37.401;
+            const lon = 126.922;
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
             fetch(url)
                 .then(res => res.json())

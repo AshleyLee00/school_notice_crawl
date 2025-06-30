@@ -13,7 +13,7 @@ def get_meal_info(api_key, school_code, start_date, end_date):
     params = {
         "KEY": api_key,
         "Type": "json",
-        "ATPT_OFCDC_SC_CODE": "E10",  # 인천광역시교육청
+        "ATPT_OFCDC_SC_CODE": "J10",  # 경기도교육청
         "SD_SCHUL_CODE": school_code,  # 학교코드
         "MLSV_FROM_YMD": start_date,
         "MLSV_TO_YMD": end_date
@@ -71,11 +71,11 @@ def generate_meal_html(meals, school_name):
         }
 
         .header-main-title {
-            font-size: 2.8rem;
+            font-size: 5.8rem;
             font-weight: 900; 
             color: #FFFFFF;
-            letter-spacing: -1px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+            letter-spacing: -2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             margin: 0;
         }
 
@@ -87,48 +87,48 @@ def generate_meal_html(meals, school_name):
 
         .page-header .weather, 
         .page-header .date-time {
-            font-size: 1.3rem;
+            font-size: 2.2rem;
             color: #FFFFFF;
             display: flex;
             align-items: center;
-            gap: 8px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+            gap: 12px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
 
         .page-header .date-time {
-            line-height: 1.2;
+            line-height: 1.3;
             text-align: right;
-            font-size: 1.1rem;
+            font-size: 1.8rem;
         }
 
         .page-header .weather {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 15px;
         }
 
         .page-header .weather-content {
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 2px;
+            gap: 5px;
         }
 
         .page-header .weather-icon {
-            width: 24px;
-            height: 24px;
+            width: 45px;
+            height: 45px;
             flex-shrink: 0;
         }
 
         .page-header .weather-temp {
-            font-size: 1.3rem;
+            font-size: 2.2rem;
         }
 
         .page-header .school-name {
-            font-size: 1.3rem;
+            font-size: 2.2rem;
             color: #FFFFFF;
             font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
             white-space: nowrap;
         }
 
@@ -170,14 +170,14 @@ def generate_meal_html(meals, school_name):
         .meal-container {
             display: flex; 
             flex-wrap: nowrap;
-            gap: 8px;
-            margin: 20px auto;
-            padding: 16px;
-            width: 98%;
-            max-width: 1200px;
+            gap: 12px;
+            margin: 40px auto;
+            padding: 20px;
+            width: 95%;
+            max-width: 2000px;
             background: #FFFFFF;
-            border-radius: 14px;
-            box-shadow: 0 4px 20px rgba(74, 27, 140, 0.10);
+            border-radius: 20px;
+            box-shadow: 0 8px 40px rgba(74, 27, 140, 0.18);
             overflow-x: auto;
         }
 
@@ -186,14 +186,14 @@ def generate_meal_html(meals, school_name):
             flex-direction: column;
             gap: 0;
             flex: 1;
-            min-width: 120px;
+            min-width: 200px;
         }
 
         .meal-date {
             background: #E7E5F5;
-            border-radius: 10px 10px 0 0;
-            padding: 8px;
-            font-size: 1.2rem;
+            border-radius: 15px 15px 0 0;
+            padding: 15px;
+            font-size: 2.2rem;
             font-weight: 900;
             color: #222;
             text-align: center;
@@ -202,17 +202,17 @@ def generate_meal_html(meals, school_name):
 
         .meal-card {
             background: white;
-            border-radius: 0 0 10px 10px;
-            padding: 10px;
+            border-radius: 0 0 15px 15px;
+            padding: 20px;
             flex: 1;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border: 1px solid #E5E5E5;
             border-top: none;
         }
 
         .meal-menu {
-            font-size: 1.1rem;
-            line-height: 1.4;
+            font-size: 2.2rem;
+            line-height: 1.5;
             color: #333;
             white-space: pre-line;
             font-weight: 500;
@@ -221,17 +221,17 @@ def generate_meal_html(meals, school_name):
 
         .meal-menu span {
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
             text-shadow: 0 0 1px rgba(0, 0, 0, 0.08);
         }
 
         .allergen {
-            font-size: 0.95rem;
+            font-size: 1.8rem;
             color: #666;
-            margin-top: 8px;
+            margin-top: 15px;
             font-weight: 500;
             border-top: 1px solid #eee;
-            padding-top: 8px;
+            padding-top: 15px;
         }
 
         /* 반응형 디자인 수정 */
@@ -243,32 +243,32 @@ def generate_meal_html(meals, school_name):
                 scrollbar-width: thin;
             }
             .meal-day-container {
-                min-width: 260px;
+                min-width: 300px;
             }
             .meal-date {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             .meal-menu {
-                font-size: 1.8rem;
+                font-size: 2.5rem;
             }
             .allergen {
-                font-size: 1.4rem;
+                font-size: 2rem;
             }
         }
 
         /* 스크롤바 스타일링 */
         .meal-container::-webkit-scrollbar {
-            height: 8px;
+            height: 12px;
         }
 
         .meal-container::-webkit-scrollbar-track {
             background: #f1f1f1;
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
         .meal-container::-webkit-scrollbar-thumb {
             background: #B8B2E5;
-            border-radius: 4px;
+            border-radius: 6px;
         }
 
         .meal-container::-webkit-scrollbar-thumb:hover {
@@ -278,9 +278,15 @@ def generate_meal_html(meals, school_name):
         .notice-text {
             text-align: center;
             color: #666;
-            font-size: 0.95rem;
-            margin: 10px 0;
-            line-height: 1.4;
+            font-size: 1.8rem;
+            margin: 20px auto;
+            line-height: 1.5;
+            max-width: 2000px;
+            width: 95%;
+            padding: 20px;
+            background: #FFFFFF;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(74, 27, 140, 0.1);
         }
     """
 
@@ -308,8 +314,8 @@ def generate_meal_html(meals, school_name):
 
         function fetchWeather() {
             const apiKey = '91fff999310c2bdea1978b3f0925fb38';
-            const lat = 37.473294;
-            const lon = 126.621205;
+            const lat = 37.401;
+            const lon = 126.922;
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
             fetch(url)
                 .then(res => res.json())
@@ -431,16 +437,22 @@ def generate_meal_html(meals, school_name):
 def main():
     # API 설정
     API_KEY = "dafe93db7c0d4c6eb8ba9a8f5aaee96b"
-    SCHOOL_CODE = "7310624"  # 인천반도체고등학교
-    SCHOOL_NAME = "인천반도체고등학교"
+    SCHOOL_CODE = "7569032"  # 안양초등학교
+    SCHOOL_NAME = "안양초등학교"
     
-    # 날짜 설정 (최근 일주일)
-    end_date = datetime.now()
-    start_date = end_date - timedelta(days=7)
+    # 날짜 설정 (이번 주 월~금)
+    today = datetime.now()
+    
+    # 이번 주 월요일 찾기 (월요일=0, 일요일=6)
+    days_since_monday = today.weekday()
+    monday = today - timedelta(days=days_since_monday)
+    friday = monday + timedelta(days=4)  # 월요일 + 4일 = 금요일
     
     # YYYYMMDD 형식으로 변환
-    start_date_str = start_date.strftime("%Y%m%d")
-    end_date_str = end_date.strftime("%Y%m%d")
+    start_date_str = monday.strftime("%Y%m%d")
+    end_date_str = friday.strftime("%Y%m%d")
+    
+    print(f"이번 주 급식 정보 가져오기: {start_date_str} ~ {end_date_str}")
     
     # 급식 정보 가져오기
     meals = get_meal_info(API_KEY, SCHOOL_CODE, start_date_str, end_date_str)

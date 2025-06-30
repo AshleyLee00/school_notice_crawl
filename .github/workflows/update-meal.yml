@@ -21,22 +21,19 @@ jobs:
           python-version: "3.9"
       
       - name: 의존성 설치
-        working-directory: ./school_notice_crawl
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       
       - name: 급식 정보 크롤링
-        working-directory: ./school_notice_crawl
         run: |
-          cd src
-          python meal_crawler.py
+          python src/meal_crawler.py
       
       - name: 변경 내용 커밋
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add school_notice_crawl/meal_info.html
+          git add meal_info.html
           git commit -m "주간 급식 정보 업데이트 $(date +'%Y-%m-%d')" || echo "No changes to commit"
       
       - name: 변경 내용 푸시

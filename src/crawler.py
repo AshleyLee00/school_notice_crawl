@@ -291,8 +291,8 @@ def generate_html_base(title, items, school_name, item_type):
 
         function fetchWeather() {
             const apiKey = '91fff999310c2bdea1978b3f0925fb38';
-            const lat = 37.473294;
-            const lon = 126.621205;
+            const lat = 37.401;
+            const lon = 126.922;
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
             fetch(url)
                 .then(res => res.json())
@@ -341,7 +341,7 @@ def generate_html_base(title, items, school_name, item_type):
                     { "".join(f"<tr><td>{item['title']}</td><td>{item['date']}</td></tr>" for item in items) }
                 </table>
             </div>
-            <img class="school-img" src="images/인천반도체고-학교.png" alt="학교 전경">
+            <img class="school-img" src="images/안양초등학교.png" alt="학교 전경">
         </div>
         <script>{js_code}</script>
     </body>
@@ -358,9 +358,9 @@ def generate_letter_html(letters, school_name):
 def main():
     # 학교 정보
     school_info = {
-        "name": "인천반도체고등학교",
-        "notice_url": "https://isc.icehs.kr/boardCnts/list.do?boardID=11101&m=0202&s=inchon_ii",
-        "letter_url": "https://isc.icehs.kr/boardCnts/list.do?boardID=11107&m=0203&s=inchon_ii"
+        "name": "안양초등학교",
+        "notice_url": "https://anyang-e.goeay.kr/anyang-e/na/ntt/selectRssFeed.do?mi=4492&bbsId=1821",
+        "letter_url": "https://anyang-e.goeay.kr/anyang-e/na/ntt/selectRssFeed.do?mi=4493&bbsId=1822"
     }
     
     # 공지사항 크롤링
