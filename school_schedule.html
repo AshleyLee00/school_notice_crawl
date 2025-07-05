@@ -559,21 +559,19 @@
             </div>
             <div class="event-list-section">
                 
-                <div class="event-list-container">
-                    <div class="event-list-part">
-                           <table class="event-list-table">
-                            <tr><td>2025.07.05</td><td>토요휴업일</td></tr><tr><td>2025.07.12</td><td>토요휴업일</td></tr><tr><td>2025.07.19</td><td>토요휴업일</td></tr><tr><td>2025.07.25</td><td>여름방학식</td></tr><tr><td>2025.07.26</td><td>여름방학</td></tr><tr><td>2025.07.26</td><td>토요휴업일</td></tr>
-                        </table>
-                    </div>
-                    
-                    <div class="event-list-part">
-                          <table class="event-list-table">
-                            <tr><td>2025.07.27</td><td>여름방학</td></tr><tr><td>2025.07.28</td><td>여름방학</td></tr><tr><td>2025.07.29</td><td>여름방학</td></tr><tr><td>2025.07.30</td><td>여름방학</td></tr><tr><td>2025.07.31</td><td>여름방학</td></tr>
-                        </table>
-                    </div>
-                    
+            <div class="event-list-container">
+                <div class="event-list-part">
+                    <table class="event-list-table">
+                        <tr><td>2025.07.05</td><td>토요휴업일</td></tr><tr><td>2025.07.12</td><td>토요휴업일</td></tr><tr><td>2025.07.19</td><td>토요휴업일</td></tr><tr><td>2025.07.25</td><td>여름방학식</td></tr><tr><td>2025.07.26</td><td>여름방학</td></tr><tr><td>2025.07.26</td><td>토요휴업일</td></tr>
+                    </table>
                 </div>
-                
+                <div class="event-list-part">
+<table class="event-list-table">
+<tr><td>2025.07.27</td><td>여름방학</td></tr><tr><td>2025.07.28</td><td>여름방학</td></tr><tr><td>2025.07.29</td><td>여름방학</td></tr><tr><td>2025.07.30</td><td>여름방학</td></tr><tr><td>2025.07.31</td><td>여름방학</td></tr>
+</table>
+</div>
+            </div>
+        
             </div>
         </div>
         <script>
@@ -680,7 +678,7 @@
         }
 
         async function fetchWeather() {
-            const apiKey = '{{ OPENWEATHER_API_KEY }}';
+            const apiKey = '""" + os.getenv("OPENWEATHER_API_KEY", "") + """';
             const lat = 37.401;
             const lon = 126.922;
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;

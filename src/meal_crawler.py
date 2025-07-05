@@ -808,7 +808,6 @@ def main():
     html_content = generate_meal_html(meals, SCHOOL_NAME)
     
     # HTML 파일 저장
-    import os
     parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     with open(os.path.join(parent_dir, "meal_info.html"), "w", encoding="utf-8") as f:
         f.write(html_content)

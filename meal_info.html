@@ -413,7 +413,7 @@
                 <div class="meal-date">06월 30일 (월)</div>
                 <div class="meal-card">
                     <div class="meal-menu">
-                        <span>현미밥(a) </span><span>콩나물국(a) (5.6)</span><span>돈육메추리알조림(a) (1.5.6.10.13)</span><span>투움바파스타(a)/부식 (2.5.6.10.12.13.15.16.18)</span><span>배추김치 </span><span>귤(여름)/3kg41 </span>
+                        <span>현미밥(a) </span><span>콩나물국(a) (5.6)</span><span>돈육메추리알조림(a) (5.6.10.13.1)</span><span>투움바파스타(a)/부식 (2.5.6.10.12.13.15.16.18)</span><span>배추김치 </span><span>귤(여름)/3kg41 </span>
                     </div>
                     
                 </div>
@@ -469,8 +469,8 @@
 
         <script>
         // 날씨 캐시 설정
-        const WEATHER_CACHE_KEY = 'headerWeatherData';
-        const WEATHER_TIMESTAMP_KEY = 'headerWeatherTimestamp';
+        const WEATHER_CACHE_KEY = 'headerWeatherData_v2';
+        const WEATHER_TIMESTAMP_KEY = 'headerWeatherTimestamp_v2';
         const WEATHER_UPDATE_INTERVAL = 60 * 60 * 1000; // 1시간 (밀리초)
 
         function updateDateTime() {
@@ -575,7 +575,7 @@
         }
 
         async function fetchWeather() {
-            const apiKey = '91fff999310c2bdea1978b3f0925fb38';
+            const apiKey = '';
             const lat = 37.401;
             const lon = 126.922;
             const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
