@@ -5,6 +5,12 @@ on:
     # 매월 마지막날 밤 11시에 학사일정 크롤링
     - cron: '0 23 28-31 * *'
   workflow_dispatch:  # 수동 실행 가능
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/school_schedule_crawler.py'
+      - '.github/workflows/monthly-crawl.yml'
 
 jobs:
   monthly-schedule-crawl:
@@ -31,40 +37,48 @@ jobs:
         echo "NEIS_API_KEY=${{ secrets.NEIS_API_KEY }}" >> .env
 
         
-    - name: Check if it's the last day of month
-      id: check_last_day
+    - name: Check if it's the last day of month or manual trigger
+      id: check_execution
       run: |
-        # 현재 날짜가 실제로 월말인지 확인
-        CURRENT_DAY=$(date +%d)
-        LAST_DAY=$(date -d "$(date +%Y-%m-01) +1 month -1 day" +%d)
-        
-        if [ "$CURRENT_DAY" = "$LAST_DAY" ]; then
-          echo "is_last_day=true" >> $GITHUB_OUTPUT
+        # 수동 실행인지 확인
+        if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "${{ github.event_name }}" = "push" ]; then
+          echo "should_execute=true" >> $GITHUB_OUTPUT
+          echo "execution_type=manual" >> $GITHUB_OUTPUT
         else
-          echo "is_last_day=false" >> $GITHUB_OUTPUT
+          # 스케줄 실행인 경우 월말인지 확인
+          CURRENT_DAY=$(date +%d)
+          LAST_DAY=$(date -d "$(date +%Y-%m-01) +1 month -1 day" +%d)
+          
+          if [ "$CURRENT_DAY" = "$LAST_DAY" ]; then
+            echo "should_execute=true" >> $GITHUB_OUTPUT
+            echo "execution_type=scheduled" >> $GITHUB_OUTPUT
+          else
+            echo "should_execute=false" >> $GITHUB_OUTPUT
+            echo "execution_type=scheduled" >> $GITHUB_OUTPUT
+          fi
         fi
         
     - name: Run schedule crawler
-      if: steps.check_last_day.outputs.is_last_day == 'true'
+      if: steps.check_execution.outputs.should_execute == 'true'
       run: |
         cd src
         python school_schedule_crawler.py
         
     - name: Configure Git
-      if: steps.check_last_day.outputs.is_last_day == 'true'
+      if: steps.check_execution.outputs.should_execute == 'true'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         
     - name: Commit and push changes
-      if: steps.check_last_day.outputs.is_last_day == 'true'
+      if: steps.check_execution.outputs.should_execute == 'true'
       run: |
         git add .
-        git diff --quiet && git diff --staged --quiet || git commit -m "Monthly schedule update: $(date '+%Y-%m-%d %H:%M:%S')"
+        git diff --quiet && git diff --staged --quiet || git commit -m "Schedule update (${{ steps.check_execution.outputs.execution_type }}): $(date '+%Y-%m-%d %H:%M:%S')"
         git push
         
     - name: Deploy to GitHub Pages
-      if: steps.check_last_day.outputs.is_last_day == 'true' && github.ref == 'refs/heads/main'
+      if: steps.check_execution.outputs.should_execute == 'true' && github.ref == 'refs/heads/main'
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

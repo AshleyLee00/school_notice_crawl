@@ -961,6 +961,15 @@ def generate_schedule_html(schedules, school_name, year, month):
     '''
     # event_list_html 렌더링 부분을 분리하여 f-string 오류 방지
     if isinstance(event_list_html, dict):
+        if event_list_html['has_second_part']:
+            second_part_html = f'''<div class="event-list-part">
+<table class="event-list-table">
+{event_list_html["second_part"]}
+</table>
+</div>'''
+        else:
+            second_part_html = ''
+            
         event_list_html_rendered = f'''
             <div class="event-list-container">
                 <div class="event-list-part">
@@ -968,7 +977,7 @@ def generate_schedule_html(schedules, school_name, year, month):
                         {event_list_html['first_part']}
                     </table>
                 </div>
-                {f'<div class="event-list-part">\n<table class="event-list-table">\n{event_list_html["second_part"]}\n</table>\n</div>' if event_list_html['has_second_part'] else ''}
+                {second_part_html}
             </div>
         '''
     else:
